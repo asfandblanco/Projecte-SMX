@@ -7,7 +7,7 @@ if (isset($_SESSION['Admin-name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inici de sesio</title>
+    <title>Inici de sessió</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -31,8 +31,8 @@ if (isset($_SESSION['Admin-name'])) {
 <body>
 <?php include'header.php'; ?> 
 <main>
-  <h1 class="slideInDown animated">Hola, inicieu sesio amb el mail de profesor.</h1>
-  <h1 class="slideInDown animated" id="reset">Per favor, poseu el mail on s’enviara un link de restauracio</h1>
+  <h1 class="slideInDown animated">Hola, inicieu sessió amb el correu del professor.</h1>
+  <h1 class="slideInDown animated" id="reset">Per favor, poseu el correu on s’enviarà un enllaç de restauració.</h1>
 <!-- Log In -->
 <section>
   <div class="slideInDown animated">
@@ -42,7 +42,7 @@ if (isset($_SESSION['Admin-name'])) {
           if (isset($_GET['error'])) {
             if ($_GET['error'] == "invalidEmail") {
                 echo '<div class="alert alert-danger">
-                        Aquest mail no es valid!
+                        Aquest correu no és vàlid!
                       </div>';
             }
             elseif ($_GET['error'] == "sqlerror") {
@@ -57,28 +57,28 @@ if (isset($_SESSION['Admin-name'])) {
             }
             elseif ($_GET['error'] == "nouser") {
                 echo '<div class="alert alert-danger">
-                        Aquest mail no existeix!
+                        Aquest correu no existeix!
                       </div>';
             }
           }
           if (isset($_GET['reset'])) {
             if ($_GET['reset'] == "success") {
                 echo '<div class="alert alert-success">
-                        Reviseu el vostre mail!
+                        Reviseu el vostre correu!
                       </div>';
             }
           }
           if (isset($_GET['account'])) {
             if ($_GET['account'] == "activated") {
                 echo '<div class="alert alert-success">
-                        Per favor feu login
+                        Per favor, feu login.
                       </div>';
             }
           }
           if (isset($_GET['active'])) {
             if ($_GET['active'] == "success") {
                 echo '<div class="alert alert-success">
-                        Activacio enviada
+                        Activació enviada!
                       </div>';
             }
           }
@@ -87,12 +87,12 @@ if (isset($_SESSION['Admin-name'])) {
         <form class="reset-form" action="reset_pass.php" method="post" enctype="multipart/form-data">
           <input type="email" name="email" placeholder="Mail" required/>
           <button type="submit" name="reset_pass">Reset</button>
-          <p class="message"><a href="#">inicia sesio</a></p>
+          <p class="message"><a href="#">Inicia sessió</a></p>
         </form>
         <form class="login-form" action="ac_login.php" method="post" enctype="multipart/form-data">
           <input type="email" name="email" id="email" placeholder="Mail" required/>
           <input type="password" name="pwd" id="pwd" placeholder="Contrasenya" required/>
-          <button type="submit" name="login" id="login">Inici de sesio</button>
+          <button type="submit" name="login" id="login">Inici de sessió</button>
           <p class="message">Contrasenya oblidada? <a href="#">Recrea contrasenya</a></p>
         </form>
       </div>

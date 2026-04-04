@@ -57,16 +57,16 @@ if (!isset($_SESSION['Admin-name'])) {
 <?php include'header.php'; ?> 
 <section class="container py-lg-5">>
   <!--User table-->
-    <h1 class="slideInDown animated">Here are the Users daily logs</h1>
+    <h1 class="slideInDown animated">Aqui els registres diaris dels usuaris</h1>
     <div class="form-style-5">
-      <button type="button" data-toggle="modal" data-target="#Filter-export">Log Filter/ Export to Excel</button>
+      <button type="button" data-toggle="modal" data-target="#Filter-export">Filtre el registre o Exporta a Excel</button>
     </div>
     <!-- Log filter -->
     <div class="modal fade bd-example-modal-lg" id="Filter-export" tabindex="-1" role="dialog" aria-labelledby="Filter/Export" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg animate" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLongTitle">Filter Your User Log:</h3>
+            <h3 class="modal-title" id="exampleModalLongTitle">Filtra el registre del usuari:</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -77,11 +77,11 @@ if (!isset($_SESSION['Admin-name'])) {
                 <div class="row">
                   <div class="col-lg-6 col-sm-6">
                     <div class="panel panel-primary">
-                      <div class="panel-heading">Filter By Date:</div>
+                      <div class="panel-heading">Filtra per data:</div>
                       <div class="panel-body">
-                      <label for="Start-Date"><b>Select from this Date:</b></label>
+                      <label for="Start-Date"><b>Selecciona des d'aquesta data:</b></label>
                       <input type="date" name="date_sel_start" id="date_sel_start">
-                      <label for="End -Date"><b>To End of this Date:</b></label>
+                      <label for="End -Date"><b>Fins aquesta data:</b></label>
                       <input type="date" name="date_sel_end" id="date_sel_end">
                       </div>
                     </div>
@@ -89,18 +89,18 @@ if (!isset($_SESSION['Admin-name'])) {
                   <div class="col-lg-6 col-sm-6">
                     <div class="panel panel-primary">
                       <div class="panel-heading">
-                          Filter By:
+                          Filtrar per hora:
                         <div class="time">
                           <input type="radio" id="radio-one" name="time_sel" class="time_sel" value="Time_in" checked/>
-                          <label for="radio-one">Time-in</label>
+                          <label for="radio-one">D'entrada</label>
                           <input type="radio" id="radio-two" name="time_sel" class="time_sel" value="Time_out" />
-                          <label for="radio-two">Time-out</label>
+                          <label for="radio-two">Sortida</label>
                         </div>
                       </div>
                       <div class="panel-body">
-                        <label for="Start-Time"><b>Select from this Time:</b></label>
+                        <label for="Start-Time"><b>Selecciona des d'aquesta hora:</b></label>
                         <input type="time" name="time_sel_start" id="time_sel_start">
-                        <label for="End -Time"><b>To End of this Time:</b></label>
+                        <label for="End -Time"><b>Fins aquesta hora:</b></label>
                         <input type="time" name="time_sel_end" id="time_sel_end">
                       </div>
                     </div>
@@ -108,9 +108,9 @@ if (!isset($_SESSION['Admin-name'])) {
                 </div>
                 <div class="row">
                   <div class="col-lg-4 col-sm-12">
-                    <label for="Fingerprint"><b>Filter By User:</b></label>
+                    <label for="Fingerprint"><b>Filtrar per usuari:</b></label>
                     <select class="card_sel" name="card_sel" id="card_sel">
-                      <option value="0">All Users</option>
+                      <option value="0">Tots els usuaris</option>
                       <?php
                         require'connectDB.php';
                         $sql = "SELECT * FROM users WHERE add_card=1 ORDER BY id ASC";
@@ -131,9 +131,9 @@ if (!isset($_SESSION['Admin-name'])) {
                     </select>
                   </div>
                   <div class="col-lg-4 col-sm-12">
-                    <label for="Device"><b>Filter By Device department:</b></label>
+                    <label for="Device"><b>Filtrar per departament:</b></label>
                     <select class="dev_sel" name="dev_sel" id="dev_sel">
-                      <option value="0">All Departments</option>
+                      <option value="0">Tots els departaments</option>
                       <?php
                         require'connectDB.php';
                         $sql = "SELECT * FROM devices ORDER BY device_dep ASC";
@@ -154,15 +154,15 @@ if (!isset($_SESSION['Admin-name'])) {
                     </select>
                   </div>
                   <div class="col-lg-4 col-sm-12">
-                    <label for="Fingerprint"><b>Export to Excel:</b></label>
+                    <label for="Fingerprint"><b>Exportar a excel:</b></label>
                     <input type="submit" name="To_Excel" value="Export">
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" name="user_log" id="user_log" class="btn btn-success">Filter</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" name="user_log" id="user_log" class="btn btn-success">Filtrar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
           </form>
         </div>

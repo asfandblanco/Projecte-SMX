@@ -7,7 +7,7 @@ if (!isset($_SESSION['Admin-name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Manage Users</title>
+	<title>Administrar Usuaris</title>
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="icon" type="image/png" href="images/favicon.png">
@@ -47,23 +47,23 @@ if (!isset($_SESSION['Admin-name'])) {
 <body>
 <?php include'header.php';?>
 <main>
-	<h1 class="slideInDown animated">Add a new User or update his information <br> or remove him</h1>
+	<h1 class="slideInDown animated">Afegeix un usuari, elimina-ho o actualitza la seva informació.</h1>
 	<div class="form-style-5 slideInDown animated">
 		<form enctype="multipart/form-data">
 			<div class="alert_user"></div>
 			<fieldset>
-				<legend><span class="number">1</span> User Info</legend>
+				<legend><span class="number">1</span> Informacio de l'usuari</legend>
 				<input type="hidden" name="user_id" id="user_id">
-				<input type="text" name="name" id="name" placeholder="User Name...">
-				<input type="text" name="number" id="number" placeholder="Serial Number...">
-				<input type="email" name="email" id="email" placeholder="User Email...">
+				<input type="text" name="name" id="name" placeholder="Nom d'usuari...">
+				<input type="text" name="number" id="number" placeholder="Número de serie...">
+				<input type="email" name="email" id="email" placeholder="Correu electrònic...">
 			</fieldset>
 			<fieldset>
-			<legend><span class="number">2</span> Additional Info</legend>
+			<legend><span class="number">2</span> Informació addicional</legend>
 			<label>
-				<label for="Device"><b>User Department:</b></label>
+				<label for="Device"><b>Department del usuari:</b></label>
                     <select class="dev_sel" name="dev_sel" id="dev_sel" style="color: #000;">
-                      <option value="0">All Departments</option>
+                      <option value="0">Tots els departments</option>
                       <?php
                         require'connectDB.php';
                         $sql = "SELECT * FROM devices ORDER BY device_name ASC";
@@ -82,13 +82,13 @@ if (!isset($_SESSION['Admin-name'])) {
                         }
                       ?>
                     </select>
-				<input type="radio" name="gender" class="gender" value="Female">Female
-	          	<input type="radio" name="gender" class="gender" value="Male" checked="checked">Male
+				<input type="radio" name="gender" class="gender" value="Female">Dona
+	          	<input type="radio" name="gender" class="gender" value="Male" checked="checked">Home
 	      	</label >
 			</fieldset>
-			<button type="button" name="user_add" class="user_add">Add User</button>
-			<button type="button" name="user_upd" class="user_upd">Update User</button>
-			<button type="button" name="user_rmo" class="user_rmo">Remove User</button>
+			<button type="button" name="user_add" class="user_add">Afegeix usuari</button>
+			<button type="button" name="user_upd" class="user_upd">Actualitzar usuari</button>
+			<button type="button" name="user_rmo" class="user_rmo">Eliminar usuari</button>
 		</form>
 	</div>
 

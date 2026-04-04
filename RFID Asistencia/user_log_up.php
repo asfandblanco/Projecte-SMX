@@ -6,13 +6,13 @@ session_start();
     <thead class="table-primary">
       <tr>
         <th>ID</th>
-        <th>Name</th>
-        <th>Serial Number</th>
-        <th>Card UID</th>
-        <th>Device Dep</th>
-        <th>Date</th>
-        <th>Time In</th>
-        <th>Time Out</th>
+        <th>Nom</th>
+        <th>Num. Serie</th>
+        <th>UID de targeta</th>
+        <th>Departament</th>
+        <th>Data</th>
+        <th>Hora entrada</th>
+        <th>Hora sortida</th>
       </tr>
     </thead>
     <tbody class="table-secondary">
@@ -109,7 +109,7 @@ session_start();
                   <TD><?php echo $row['serialnumber'];?></TD>
                   <TD><?php echo $row['card_uid'];?></TD>
                   <TD><?php echo $row['device_dep'];?></TD>
-                  <TD><?php echo $row['checkindate'];?></TD>
+                  <TD><?php echo date("d/m/Y", strtotime($row['checkindate']));?></TD>
                   <TD><?php echo $row['timein'];?></TD>
                   <TD><?php echo $row['timeout'];?></TD>
                   </TR>

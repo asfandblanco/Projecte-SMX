@@ -2,7 +2,7 @@
 //Connect to database
 require 'connectDB.php';
 date_default_timezone_set('Asia/Damascus');
-$d = date("Y-m-d");
+$d = date("d-m-Y");
 $t = date("H:i:sa");
 
 if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {

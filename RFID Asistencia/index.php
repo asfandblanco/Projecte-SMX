@@ -61,7 +61,7 @@ if (!isset($_SESSION['Admin-name'])) {
                       <TD><?php echo $row['serialnumber'];?></TD>
                       <TD><?php echo $row['gender'];?></TD>
                       <TD><?php echo $row['card_uid'];?></TD>
-                      <TD><?php echo $row['user_date'];?></TD>
+                      <TD><?php echo date("d/m/Y", strtotime($row['user_date']));?></TD>
                       <TD><?php echo $row['device_dep'];?></TD>
                       </TR>
         <?php

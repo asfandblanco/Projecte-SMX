@@ -72,23 +72,23 @@ if (isset($_POST['Add'])) {
                             }
                         }
                         else {
-                            echo "The serial number is already taken!";
+                            echo "El número de sèrie ja està agafat!";
                             exit();
                         }
                     }
                 }
                 else{
-                    echo "Empty Fields";
+                    echo "Camps buits";
                     exit();
                 }
             }
             else{
-                echo "This User is already exist";
+                echo "Aquest usuari ja existeix";
                 exit();
             }    
         }
         else {
-            echo "There's no selected Card!";
+            echo "No hi ha cap targeta seleccionada!";
             exit();
         }
     }
@@ -117,12 +117,12 @@ if (isset($_POST['Update'])) {
         if ($row = mysqli_fetch_assoc($resultl)) {
 
             if ($row['add_card'] == 0) {
-                echo "First, You need to add the User!";
+                echo "Primer, heu d'afegir l'usuari!";
                 exit();
             }
             else{
                 if (empty($Uname) && empty($Number) && empty($Email)) {
-                    echo "Empty Fields";
+                    echo "Camps buits";
                     exit();
                 }
                 else{
@@ -174,7 +174,7 @@ if (isset($_POST['Update'])) {
                             }
                         }
                         else {
-                            echo "The serial number is already taken!";
+                            echo "El número de sèrie ja està agafat!";
                             exit();
                         }
                     }
@@ -182,7 +182,7 @@ if (isset($_POST['Update'])) {
             }    
         }
         else {
-            echo "There's no selected User to be updated!";
+            echo "No hi ha cap usuari seleccionat a actualitzar!";
             exit();
         }
     }
@@ -222,7 +222,7 @@ if (isset($_POST['delete'])) {
     $user_id = $_POST['user_id'];
 
     if (empty($user_id)) {
-        echo "There no selected user to remove";
+        echo "No hi ha cap usuari seleccionat per eliminar";
         exit();
     } else {
         $sql = "DELETE FROM users WHERE id=?";

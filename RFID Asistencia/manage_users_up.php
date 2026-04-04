@@ -2,12 +2,12 @@
   <table class="table">
     <thead class="table-primary">
       <tr>
-        <th>Card UID</th>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>S.No</th>
-        <th>Date</th>
-        <th>Department</th>
+        <th>ID de la targeta</th>
+        <th>Nom</th>
+        <th>Genere</th>
+        <th>Num. Serie</th>
+        <th>Data</th>
+        <th>Departament</th>
       </tr>
     </thead>
     <tbody class="table-secondary">
@@ -40,7 +40,7 @@
                   <TD><?php echo $row['username'];?></TD>
                   <TD><?php echo $row['gender'];?></TD>
                   <TD><?php echo $row['serialnumber'];?></TD>
-                  <TD><?php echo $row['user_date'];?></TD>
+                  <TD><?php echo date("d/m/Y", strtotime($row['user_date']));?></TD>
                   <TD><?php echo ($row['device_dep'] == "0") ? "All" : $row['device_dep'];?></TD>
                   </TR>
     <?php
