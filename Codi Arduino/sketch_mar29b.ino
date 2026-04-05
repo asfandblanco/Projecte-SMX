@@ -19,9 +19,9 @@
 MFRC522 mfrc522(SS_PIN, RST_PIN); // Create MFRC522 instance.
 //************************************************************************
 /* Set these to your desired credentials. */
-const char *ssid = "DIGIFIBRA-qbX4";
-const char *password = "4cxCUcgxqW7d";
-const char* device_token  = "05396ba7a2e574e3";
+const char *ssid = "Wi-Fi";
+const char *password = "Contraseña";
+const char* device_token  = "Número conexión";
 //************************************************************************
 int timezone = 1 * 3600;   //Replace "x" with your timezone.
 int time_dst = 0;
