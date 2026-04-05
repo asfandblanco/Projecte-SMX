@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------------------------
-  - Project: RFID attendance system using ESP32 (OLED removed)
-  - Author:  Original by ElectronicsTechHaIs
-  - Date:  6/03/2020
+  - Project: RFID attendance system using ESP32.
+  - Author:  Asfand
+  - Date:  20/03/2026
  -----------------------------------------------------------------------------*/
 //*******************************Libreries********************************
 //ESP32----------------------------
