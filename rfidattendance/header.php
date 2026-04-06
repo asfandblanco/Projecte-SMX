@@ -63,7 +63,7 @@
     <a href="schedule_management.php">Horaris</a>    <?php  
     	if (isset($_SESSION['Admin-name'])) {
     		echo '<a href="#" data-toggle="modal" data-target="#admin-account">'.$_SESSION['Admin-name'].'</a>';
-    		echo '<a href="logout.php">Tanca sessió</a>';
+    		echo '<a href="logout.php" id="logout-link" class="logout-link"><i class="fa fa-exclamation-triangle"></i> Tanca sessió</a>';
     	}
     	else{
     		echo '<a href="login.php">Log In</a>';
@@ -84,6 +84,16 @@
 	    x.className = "topnav";
 	  }
 	}
+	document.addEventListener('DOMContentLoaded', function() {
+	  var logoutLink = document.getElementById('logout-link');
+	  if (logoutLink) {
+	    logoutLink.addEventListener('click', function(event) {
+	      if (!confirm('Estàs segur que vols tancar la sessió?')) {
+	        event.preventDefault();
+	      }
+	    });
+	  }
+	});
 </script>
 
 <!-- Account Update -->

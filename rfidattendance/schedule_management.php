@@ -7,9 +7,9 @@ if (!isset($_SESSION['Admin-name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gestión de Horarios</title>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestió d'Horaris</title>
+   	<meta charset="utf-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/manageusers.css"/>
 	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="js/bootbox.min.js"></script>
@@ -19,7 +19,7 @@ if (!isset($_SESSION['Admin-name'])) {
 <body>
 <?php include'header.php';?>
 <main>
-	<h1 class="slideInDown animated">Configurar Horarios por Departamento</h1>
+	<h1 class="slideInDown animated">Configurar horaris per departament</h1>
 
 	<section class="container py-lg-5">
 		<div class="alert_schedule"></div>
@@ -28,8 +28,8 @@ if (!isset($_SESSION['Admin-name'])) {
 		<div class="row">
 			<div class="col-lg-12 mt-4">
 				<div class="panel">
-			      <div class="panel-heading" style="font-size: 19px;">Horarios de Trabajo:
-			      	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#new-schedule" style="font-size: 18px; float: right; margin-top: -6px;">Nuevo Horario</button>
+			      <div class="panel-heading" style="font-size: 19px;">Horaris de treball:
+			      	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#new-schedule" style="font-size: 18px; float: right; margin-top: -6px;">Nou horari</button>
 			      </div>
 			      <div class="panel-body">
 			      		<div id="schedules"></div>
@@ -40,26 +40,26 @@ if (!isset($_SESSION['Admin-name'])) {
 		<!-- //Schedule Management -->
 
 		<!-- New Schedule Modal -->
-		<div class="modal fade" id="new-schedule" tabindex="-1" role="dialog" aria-labelledby="New Schedule" aria-hidden="true">
+		<div class="modal fade" id="new-schedule" tabindex="-1" role="dialog" aria-labelledby="Nou Horari" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h3 class="modal-title" id="exampleModalLongTitle">Añadir nuevo horario:</h3>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        <h3 class="modal-title" id="exampleModalLongTitle">Afegeix un nou horari:</h3>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Tanca">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
 		      <form action="" method="POST" enctype="multipart/form-data">
 			      <div class="modal-body">
-			      	<label for="department"><b>Departamento:</b></label>
+			      	<label for="department"><b>Departament:</b></label>
 			      	<select name="department" id="department" required>
-			      		<option value="">Seleccionar departamento...</option>
+			      		<option value="">Selecciona departament...</option>
 			      		<?php
 			      			require'connectDB.php';
 			      			$sql = "SELECT DISTINCT device_dep FROM devices ORDER BY device_dep ASC";
 			      			$result = mysqli_stmt_init($conn);
 			      			if (!mysqli_stmt_prepare($result, $sql)) {
-			      			    echo '<option value="">Error al cargar departamentos</option>';
+			      			    echo '<option value="">Error en carregar els departaments</option>';
 			      			} else {
 			      			    mysqli_stmt_execute($result);
 			      			    $resultl = mysqli_stmt_get_result($result);
@@ -70,27 +70,27 @@ if (!isset($_SESSION['Admin-name'])) {
 			      		?>
 			      	</select><br>
 
-			      	<label for="day_of_week"><b>Día de la semana:</b></label>
-			      	<select name="day_of_week" id="day_of_week" required>
-			      		<option value="">Seleccionar día...</option>
-			      		<option value="1">Lunes</option>
-			      		<option value="2">Martes</option>
-			      		<option value="3">Miércoles</option>
-			      		<option value="4">Jueves</option>
-			      		<option value="5">Viernes</option>
-			      		<option value="6">Sábado</option>
-			      		<option value="7">Domingo</option>
+<label for="day_of_week"><b>Dia de la setmana:</b></label>
+		       	<select name="day_of_week" id="day_of_week" required>
+		       		<option value="">Selecciona dia...</option>
+		       		<option value="1">Dilluns</option>
+		       		<option value="2">Dimarts</option>
+		       		<option value="3">Dimecres</option>
+		       		<option value="4">Dijous</option>
+		       		<option value="5">Divendres</option>
+		       		<option value="6">Dissabte</option>
+		       		<option value="7">Diumenge</option>
 			      	</select><br>
 
-			      	<label for="start_time"><b>Hora de entrada:</b></label>
+			      	<label for="start_time"><b>Hora d'entrada:</b></label>
 			      	<input type="time" name="start_time" id="start_time" required/><br>
 
-			      	<label for="end_time"><b>Hora de salida:</b></label>
+			      	<label for="end_time"><b>Hora de sortida:</b></label>
 			      	<input type="time" name="end_time" id="end_time" required/><br>
 			      </div>
 			      <div class="modal-footer">
-			        <button type="button" name="schedule_add" id="schedule_add" class="btn btn-success">Crear Horario</button>
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+		        <button type="button" name="schedule_add" id="schedule_add" class="btn btn-success">Crear horari</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel·lar</button>
 			      </div>
 			  </form>
 		    </div>

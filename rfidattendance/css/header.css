@@ -77,6 +77,17 @@ header, main {
   color: black;
 }
 
+.topnav a.logout-link {
+  background-color: #c82333;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.topnav a.logout-link:hover {
+  background-color: #a71d2a;
+  color: #ffffff;
+}
+
 .topnav .icon {
   display: none;
 }

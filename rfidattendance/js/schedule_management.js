@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 		    if (response == 1) {
 		    	$('.alert_schedule').fadeIn(500);
-			    $('.alert_schedule').html('<p class="alert alert-success">Horario añadido correctamente</p>');
+			    $('.alert_schedule').html('<p class="alert alert-success">Horari afegit correctament</p>');
 		        $('#new-schedule').modal('hide');
 		        setTimeout(function () {
 			        $('.alert_schedule').fadeOut(500);
@@ -70,7 +70,7 @@ $(document).ready(function(){
 		var schedule_id = $(this).data('id');
 		var btn = $(this);
 
-		bootbox.confirm("¿Estás seguro de eliminar este horario?", function(result) {
+		bootbox.confirm("Estàs segur que vols eliminar aquest horari?", function(result) {
 			if (result) {
 				$.ajax({
 				  url: 'schedule_config.php',
@@ -83,14 +83,14 @@ $(document).ready(function(){
 				    if (response == 1) {
 				    	btn.closest('tr').fadeOut(500);
 				    	$('.alert_schedule').fadeIn(500);
-					    $('.alert_schedule').html('<p class="alert alert-success">Horario eliminado correctamente</p>');
+					    $('.alert_schedule').html('<p class="alert alert-success">Horari eliminat correctament</p>');
 				        setTimeout(function () {
 					        $('.alert_schedule').fadeOut(500);
 					    }, 2000);
 				    }
 				    else {
 				    	$('.alert_schedule').fadeIn(500);
-				    	$('.alert_schedule').html('<p class="alert alert-danger">Error al eliminar: ' + response + '</p>');
+				    	$('.alert_schedule').html('<p class="alert alert-danger">Error en eliminar: ' + response + '</p>');
 				    	setTimeout(function () {
 					        $('.alert_schedule').fadeOut(500);
 					    }, 2000);
@@ -116,7 +116,7 @@ $(document).ready(function(){
 		  success: function(response){
 		    if (response == 1) {
 		    	$('.alert_schedule').fadeIn(500);
-			    $('.alert_schedule').html('<p class="alert alert-success">Estado del horario actualizado</p>');
+			    $('.alert_schedule').html('<p class="alert alert-success">Estat de l\'horari actualitzat</p>');
 		        setTimeout(function () {
 			        $('.alert_schedule').fadeOut(500);
 			        // Reload schedules
@@ -133,7 +133,7 @@ $(document).ready(function(){
 		    }
 		    else {
 		    	$('.alert_schedule').fadeIn(500);
-		    	$('.alert_schedule').html('<p class="alert alert-danger">Error al actualizar: ' + response + '</p>');
+		    	$('.alert_schedule').html('<p class="alert alert-danger">Error en actualitzar: ' + response + '</p>');
 		    	setTimeout(function () {
 			        $('.alert_schedule').fadeOut(500);
 			    }, 2000);

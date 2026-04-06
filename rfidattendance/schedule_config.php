@@ -10,9 +10,9 @@ if (isset($_POST['schedule_add'])) {
     $end_time = $_POST['end_time'];
 
     if (empty($department) || empty($day_of_week) || empty($start_time) || empty($end_time)) {
-        echo '<p class="alert alert-danger">Todos los campos son obligatorios</p>';
+        echo '<p class="alert alert-danger">Tots els camps són obligatoris</p>';
     } elseif ($start_time >= $end_time) {
-        echo '<p class="alert alert-danger">La hora de entrada debe ser anterior a la hora de salida</p>';
+        echo '<p class="alert alert-danger">L'hora d'entrada ha de ser anterior a l'hora de sortida</p>';
     } else {
         $sql = "INSERT INTO department_schedules (device_dep, day_of_week, start_time, end_time) VALUES (?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE start_time=?, end_time=?";
