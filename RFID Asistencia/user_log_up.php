@@ -12,7 +12,7 @@ session_start();
         <th>Departament</th>
         <th>Data</th>
         <th>Hora entrada</th>
-        <th>Hora sortida</th>
+        <th>Acció</th>
       </tr>
     </thead>
     <tbody class="table-secondary">
@@ -111,7 +111,7 @@ session_start();
                   <TD><?php echo $row['device_dep'];?></TD>
                   <TD><?php echo date("d/m/Y", strtotime($row['checkindate']));?></TD>
                   <TD><?php echo $row['timein'];?></TD>
-                  <TD><?php echo $row['timeout'];?></TD>
+                  <TD><button type="button" class="btn btn-danger btn-sm delete-log" data-id="<?php echo $row['id'];?>" title="Eliminar aquest registre"><span class="glyphicon glyphicon-trash"></span> Eliminar</button></TD>
                   </TR>
       <?php
                 }

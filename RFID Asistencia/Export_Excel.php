@@ -84,7 +84,6 @@ if(isset($_POST["To_Excel"])){
                       <TH>Device Dep</TH>
                       <TH>Date log</TH>
                       <TH>Time In</TH>
-                      <TH>Time Out</TH>
                     </TR>';
         while($row=$result->fetch_assoc()) {
             $output .= '
@@ -97,7 +96,6 @@ if(isset($_POST["To_Excel"])){
                             <TD> '.$row['device_dep'].'</TD>
                             <TD> '.$row['checkindate'].'</TD>
                             <TD> '.$row['timein'].'</TD>
-                            <TD> '.$row['timeout'].'</TD>
                         </TR>';
         }
         $output .= '</table>';
