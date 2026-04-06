@@ -59,7 +59,8 @@
     <a href="ManageUsers.php">Gestionar Usuaris</a>
     <a href="UsersLog.php">Registre d’usuaris</a>
     <a href="devices.php">Dispositius</a>
-    <?php  
+    <a href="install_schedules.php">Instalar Horaris</a>
+    <a href="schedule_management.php">Horaris</a>    <?php  
     	if (isset($_SESSION['Admin-name'])) {
     		echo '<a href="#" data-toggle="modal" data-target="#admin-account">'.$_SESSION['Admin-name'].'</a>';
     		echo '<a href="logout.php">Tanca sessió</a>';
