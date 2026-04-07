@@ -62,7 +62,7 @@ if (!isset($_SESSION['Admin-name'])) {
 			<legend><span class="number">2</span> Informació addicional</legend>
 			<label>
 				<label for="Device"><b>Department del usuari:</b></label>
-                    <select class="dev_sel" name="dev_sel" id="dev_sel" style="color: #000;">
+                    <select class="dev_sel" name="dev_sel" id="dev_sel">
                       <option value="0">Tots els departments</option>
                       <?php
                         require'connectDB.php';

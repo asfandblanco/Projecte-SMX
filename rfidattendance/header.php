@@ -6,6 +6,7 @@
 </head>
 <header>
 <div class="header">
+	<img src="image2.png" alt="Banner" class="top-banner" />
 	<div class="logo">
 		<a href="index.php">Llistat amb RFID</a>
 	</div>
