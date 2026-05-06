@@ -28,13 +28,13 @@ int time_dst = 0;
 String getData, Link;
 String OldCardID = "";
 unsigned long previousMillis2 = 0;
-String URL = "http://192.168.1.136/rfidattendance/getdata.php"; //computer IP or server domain
+String URL = "http://IP/rfidattendance/getdata.php"; //computer IP or server domain
 //************************************************************************
 void setup() {
   delay(1000);
   Serial.begin(115200);
   // Inicializar SPI con los pines estándar
-  SPI.begin(18, 19, 23, SS_PIN); // SCK=18, MISO=19, MOSI=23, SS=21
+  SPI.begin(18, 19, 23, SS_PIN); // SCK=18, MISO=19, MOSI=23, SSA=21
   mfrc522.PCD_Init();            // Init MFRC522 card
 
   connectToWiFi();                // Connect to Wi-Fi
