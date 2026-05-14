@@ -7,8 +7,8 @@ session_start();
 	      <tr>
 	        <th>Departament</th>
 	        <th>Dia</th>
-	        <th>Hora d'entrada</th>
-	        <th>Hora de sortida</th>
+	        <th>Hora mínima d'entrada</th>
+	        <th>Hora màxima d'entrada</th>
 	        <th>Estat</th>
 	        <th>Accions</th>
 	      </tr>

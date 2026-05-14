@@ -1,9 +1,14 @@
 <?php
 //Connect to database
 require 'connectDB.php';
-date_default_timezone_set('Asia/Damascus');
+date_default_timezone_set('Europe/Madrid');
 $d = date("Y-m-d");
 $t = date("H:i:s");
+
+// Log all requests for debugging
+$log_file = 'rfid_log.txt';
+$log_entry = date("Y-m-d H:i:s") . " - Request: " . $_SERVER['REQUEST_URI'] . "\n";
+file_put_contents($log_file, $log_entry, FILE_APPEND);
 
 // Function to check if current time is within allowed schedule
 function isWithinSchedule($device_dep, $current_time, $conn) {
@@ -12,7 +17,7 @@ function isWithinSchedule($device_dep, $current_time, $conn) {
     $sql = "SELECT * FROM department_schedules WHERE device_dep=? AND day_of_week=? AND is_active=1";
     $result = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($result, $sql)) {
-        return false;
+        return true; // If error, assume within
     }
 
     mysqli_stmt_bind_param($result, "si", $device_dep, $day_of_week);
@@ -27,15 +32,18 @@ function isWithinSchedule($device_dep, $current_time, $conn) {
         if ($current_time >= $start_time && $current_time <= $end_time) {
             return true;
         }
+        return false;
     }
 
-    return false;
+    return true; // If no schedule set, assume within
 }
 
 if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {
 
     $card_uid = $_GET['card_uid'];
     $device_uid = $_GET['device_token'];
+
+    file_put_contents($log_file, date("Y-m-d H:i:s") . " - Processing card_uid: $card_uid, device_token: $device_uid\n", FILE_APPEND);
 
     $sql = "SELECT * FROM devices WHERE device_uid=?";
     $result = mysqli_stmt_init($conn);
@@ -50,6 +58,7 @@ if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {
         if ($row = mysqli_fetch_assoc($resultl)){
             $device_mode = $row['device_mode'];
             $device_dep = $row['device_dep'];
+            file_put_contents($log_file, date("Y-m-d H:i:s") . " - Device found: mode=$device_mode, dep=$device_dep\n", FILE_APPEND);
             if ($device_mode == 1) {
                 $sql = "SELECT * FROM users WHERE card_uid=?";
                 $result = mysqli_stmt_init($conn);
@@ -62,6 +71,7 @@ if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {
                     mysqli_stmt_execute($result);
                     $resultl = mysqli_stmt_get_result($result);
                     if ($row = mysqli_fetch_assoc($resultl)){
+                        file_put_contents($log_file, date("Y-m-d H:i:s") . " - User found: $row[username], add_card=$row[add_card], device_uid=$row[device_uid]\n", FILE_APPEND);
                         //*****************************************************
                         //An existed Card has been detected for Login or Logout
                         if ($row['add_card'] == 1){
@@ -70,10 +80,11 @@ if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {
                                 $Number = $row['serialnumber'];
 
                                 // Check if user is within allowed schedule
-                                if (!isWithinSchedule($device_dep, $t, $conn)) {
-                                    echo "out_of_schedule";
-                                    exit();
+                                $within_schedule = isWithinSchedule($device_dep, $t, $conn);
+                                if (!$within_schedule) {
+                                    file_put_contents($log_file, date("Y-m-d H:i:s") . " - Out of schedule for dep=$device_dep, time=$t\n", FILE_APPEND);
                                 }
+                                file_put_contents($log_file, date("Y-m-d H:i:s") . " - Within schedule\n", FILE_APPEND);
 
                                 $sql = "SELECT * FROM users_logs WHERE card_uid=? AND checkindate=? AND card_out=0";
                                 $result = mysqli_stmt_init($conn);
@@ -88,6 +99,7 @@ if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {
                                     //*****************************************************
                                     //Login
                                     if (!$row = mysqli_fetch_assoc($resultl)){
+                                        file_put_contents($log_file, date("Y-m-d H:i:s") . " - Login for $Uname\n", FILE_APPEND);
 
                                         $sql = "INSERT INTO users_logs (username, serialnumber, card_uid, device_uid, device_dep, checkindate, timein, timeout) VALUES (? ,?, ?, ?, ?, ?, ?, ?)";
                                         $result = mysqli_stmt_init($conn);
@@ -107,6 +119,7 @@ if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {
                                     //*****************************************************
                                     //Logout
                                     else{
+                                        file_put_contents($log_file, date("Y-m-d H:i:s") . " - Logout for $Uname\n", FILE_APPEND);
                                         $sql="UPDATE users_logs SET timeout=?, card_out=1 WHERE card_uid=? AND checkindate=? AND card_out=0";
                                         $result = mysqli_stmt_init($conn);
                                         if (!mysqli_stmt_prepare($result, $sql)) {
@@ -124,16 +137,19 @@ if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {
                                 }
                             }
                             else {
+                                file_put_contents($log_file, date("Y-m-d H:i:s") . " - Not Allowed! device mismatch\n", FILE_APPEND);
                                 echo "Not Allowed!";
                                 exit();
                             }
                         }
                         else if ($row['add_card'] == 0){
+                            file_put_contents($log_file, date("Y-m-d H:i:s") . " - Not registered\n", FILE_APPEND);
                             echo "Not registerd!";
                             exit();
                         }
                     }
                     else{
+                        file_put_contents($log_file, date("Y-m-d H:i:s") . " - Card not found in users table\n", FILE_APPEND);
                         echo "Not found!";
                         exit();
                     }
@@ -234,9 +250,14 @@ if (isset($_GET['card_uid']) && isset($_GET['device_token'])) {
             }
         }
         else{
+            file_put_contents($log_file, date("Y-m-d H:i:s") . " - Invalid Device! device_token not found\n", FILE_APPEND);
             echo "Invalid Device!";
             exit();
         }
     }          
+}
+else {
+    file_put_contents($log_file, date("Y-m-d H:i:s") . " - Missing parameters: card_uid or device_token\n", FILE_APPEND);
+    echo "Missing parameters";
 }
 ?>

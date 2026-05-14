@@ -80,6 +80,11 @@ section {
   background-color: #46abb9 !important;
 }
 
+.late-entry {
+  color: red !important;
+  font-weight: bold !important;
+}
+
 .slideInRight {
   animation-name: slideInRight;
 } 

@@ -20,6 +20,34 @@ session_start();
 
         //Connect to database
         require'connectDB.php';
+
+        // Function to check if time is within allowed schedule
+        function isWithinSchedule($device_dep, $check_date, $check_time, $conn) {
+            $day_of_week = date('N', strtotime($check_date)); // Day of week for the check date
+
+            $sql = "SELECT * FROM department_schedules WHERE device_dep=? AND day_of_week=? AND is_active=1";
+            $result = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($result, $sql)) {
+                return true; // If error, assume within
+            }
+
+            mysqli_stmt_bind_param($result, "si", $device_dep, $day_of_week);
+            mysqli_stmt_execute($result);
+            $resultl = mysqli_stmt_get_result($result);
+
+            if ($row = mysqli_fetch_assoc($resultl)) {
+                $start_time = $row['start_time'];
+                $end_time = $row['end_time'];
+
+                // Check if check time is within the allowed schedule
+                if ($check_time >= $start_time && $check_time <= $end_time) {
+                    return true;
+                }
+                return false;
+            }
+
+            return true; // If no schedule set, assume within
+        }
         $searchQuery = " ";
         $Start_date = " ";
         $End_date = " ";
@@ -102,6 +130,8 @@ session_start();
             $resultl = mysqli_stmt_get_result($result);
             if (mysqli_num_rows($resultl) > 0){
                 while ($row = mysqli_fetch_assoc($resultl)){
+                    $within_schedule = isWithinSchedule($row['device_dep'], $row['checkindate'], $row['timein'], $conn);
+                    $timein_style = $within_schedule ? '' : ' style="color: red !important; font-weight: bold !important;"';
         ?>
                   <TR>
                   <TD><?php echo $row['id'];?></TD>
@@ -110,7 +140,7 @@ session_start();
                   <TD><?php echo $row['card_uid'];?></TD>
                   <TD><?php echo $row['device_dep'];?></TD>
                   <TD><?php echo date("d/m/Y", strtotime($row['checkindate']));?></TD>
-                  <TD><?php echo $row['timein'];?></TD>
+                  <TD<?php echo $timein_style; ?>><?php echo $row['timein'];?></TD>
                   <TD><button type="button" class="btn btn-danger btn-sm delete-log" data-id="<?php echo $row['id'];?>" title="Eliminar aquest registre"><span class="glyphicon glyphicon-trash"></span> Eliminar</button></TD>
                   </TR>
       <?php

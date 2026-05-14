@@ -82,10 +82,10 @@ if (!isset($_SESSION['Admin-name'])) {
 		       		<option value="7">Diumenge</option>
 			      	</select><br>
 
-			      	<label for="start_time"><b>Hora d'entrada:</b></label>
+			      	<label for="start_time"><b>Hora mínima d'entrada:</b></label>
 			      	<input type="time" name="start_time" id="start_time" required/><br>
 
-			      	<label for="end_time"><b>Hora de sortida:</b></label>
+			      	<label for="end_time"><b>Hora màxima d'entrada:</b></label>
 			      	<input type="time" name="end_time" id="end_time" required/><br>
 			      </div>
 			      <div class="modal-footer">

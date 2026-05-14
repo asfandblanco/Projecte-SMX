@@ -26,7 +26,7 @@ h1{
  .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #f2f2f2;
+  background: rgba(0,0,0,0.8);
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -34,6 +34,14 @@ h1{
   box-sizing: border-box;
   font-size: 15px;
   border-radius: 0 25px;
+  color: #fff;
+}
+ .form input:focus {
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+}
+ .form input::placeholder {
+  color: rgba(255,255,255,0.7);
 }
  .form button {
   font-family: "Roboto", sans-serif;

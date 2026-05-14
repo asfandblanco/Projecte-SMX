@@ -1,0 +1,135 @@
+2026-04-28 17:27:08 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 17:27:08 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 17:27:08 - Device found: mode=1, dep=Informatica
+2026-04-28 17:27:08 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 17:27:08 - Out of schedule for dep=Informatica, time=17:27:08
+2026-04-28 17:27:14 - Request: /rfidattendance/getdata.php?card_uid=123456&device_token=abcdef
+2026-04-28 17:27:14 - Processing card_uid: 123456, device_token: abcdef
+2026-04-28 17:27:14 - Invalid Device! device_token not found
+2026-04-28 17:27:29 - Request: /rfidattendance/getdata.php?card_uid=123456&device_token=05396ba7a2e574e3
+2026-04-28 17:27:29 - Processing card_uid: 123456, device_token: 05396ba7a2e574e3
+2026-04-28 17:27:29 - Device found: mode=1, dep=Informatica
+2026-04-28 17:27:29 - Card not found in users table
+2026-04-28 17:27:50 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 17:27:50 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 17:27:50 - Device found: mode=1, dep=Informatica
+2026-04-28 17:27:50 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 17:27:50 - Out of schedule for dep=Informatica, time=17:27:50
+2026-04-28 17:32:26 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 17:32:26 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 17:32:26 - Device found: mode=1, dep=Informatica
+2026-04-28 17:32:26 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 17:32:26 - Out of schedule for dep=Informatica, time=17:32:26
+2026-04-28 17:32:26 - Within schedule
+2026-04-28 17:32:26 - Login for Dani
+2026-04-28 17:32:37 - Request: /rfidattendance/getdata.php?card_uid=10240350&device_token=05396ba7a2e574e3
+2026-04-28 17:32:37 - Processing card_uid: 10240350, device_token: 05396ba7a2e574e3
+2026-04-28 17:32:37 - Device found: mode=1, dep=Informatica
+2026-04-28 17:32:37 - Card not found in users table
+2026-04-28 17:32:46 - Request: /rfidattendance/getdata.php?card_uid=1122078848&device_token=05396ba7a2e574e3
+2026-04-28 17:32:46 - Processing card_uid: 1122078848, device_token: 05396ba7a2e574e3
+2026-04-28 17:32:46 - Device found: mode=1, dep=Informatica
+2026-04-28 17:32:46 - User found: Asfand, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 17:32:46 - Out of schedule for dep=Informatica, time=17:32:46
+2026-04-28 17:32:46 - Within schedule
+2026-04-28 17:32:46 - Login for Asfand
+2026-04-28 17:35:23 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 17:35:23 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 17:35:23 - Device found: mode=1, dep=Informatica
+2026-04-28 17:35:23 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 17:35:23 - Out of schedule for dep=Informatica, time=17:35:23
+2026-04-28 17:35:23 - Within schedule
+2026-04-28 17:35:23 - Logout for Dani
+2026-04-28 17:42:40 - Request: /rfidattendance/getdata.php?card_uid=10240350&device_token=05396ba7a2e574e3
+2026-04-28 17:42:40 - Processing card_uid: 10240350, device_token: 05396ba7a2e574e3
+2026-04-28 17:42:40 - Device found: mode=1, dep=Informatica
+2026-04-28 17:42:40 - Card not found in users table
+2026-04-28 17:42:59 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 17:42:59 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 17:42:59 - Device found: mode=1, dep=Informatica
+2026-04-28 17:42:59 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 17:42:59 - Out of schedule for dep=Informatica, time=17:42:59
+2026-04-28 17:42:59 - Within schedule
+2026-04-28 17:42:59 - Login for Dani
+2026-04-28 17:43:10 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 17:43:10 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 17:43:10 - Device found: mode=1, dep=Informatica
+2026-04-28 17:43:10 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 17:43:10 - Out of schedule for dep=Informatica, time=17:43:10
+2026-04-28 17:43:10 - Within schedule
+2026-04-28 17:43:10 - Logout for Dani
+2026-04-28 17:45:29 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 17:45:29 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 17:45:29 - Device found: mode=1, dep=Informatica
+2026-04-28 17:45:29 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 17:45:29 - Out of schedule for dep=Informatica, time=17:45:29
+2026-04-28 17:45:29 - Within schedule
+2026-04-28 17:45:29 - Login for Dani
+2026-04-28 17:45:37 - Request: /rfidattendance/getdata.php?card_uid=10240350&device_token=05396ba7a2e574e3
+2026-04-28 17:45:37 - Processing card_uid: 10240350, device_token: 05396ba7a2e574e3
+2026-04-28 17:45:37 - Device found: mode=1, dep=Informatica
+2026-04-28 17:45:37 - Card not found in users table
+2026-04-28 16:47:48 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 16:47:48 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 16:47:48 - Device found: mode=1, dep=Informatica
+2026-04-28 16:47:48 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 16:47:48 - Out of schedule for dep=Informatica, time=16:47:48
+2026-04-28 16:47:48 - Within schedule
+2026-04-28 16:47:48 - Logout for Dani
+2026-04-28 16:47:52 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 16:47:52 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 16:47:52 - Device found: mode=1, dep=Informatica
+2026-04-28 16:47:52 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 16:47:52 - Out of schedule for dep=Informatica, time=16:47:52
+2026-04-28 16:47:52 - Within schedule
+2026-04-28 16:47:52 - Login for Dani
+2026-04-28 16:47:57 - Request: /rfidattendance/getdata.php?card_uid=10240350&device_token=05396ba7a2e574e3
+2026-04-28 16:47:57 - Processing card_uid: 10240350, device_token: 05396ba7a2e574e3
+2026-04-28 16:47:57 - Device found: mode=1, dep=Informatica
+2026-04-28 16:47:57 - Card not found in users table
+2026-04-28 16:48:07 - Request: /rfidattendance/getdata.php?card_uid=10240350&device_token=05396ba7a2e574e3
+2026-04-28 16:48:07 - Processing card_uid: 10240350, device_token: 05396ba7a2e574e3
+2026-04-28 16:48:07 - Device found: mode=1, dep=Informatica
+2026-04-28 16:48:07 - Card not found in users table
+2026-04-28 16:48:11 - Request: /rfidattendance/getdata.php?card_uid=1122078848&device_token=05396ba7a2e574e3
+2026-04-28 16:48:11 - Processing card_uid: 1122078848, device_token: 05396ba7a2e574e3
+2026-04-28 16:48:11 - Device found: mode=1, dep=Informatica
+2026-04-28 16:48:11 - User found: Asfand, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 16:48:11 - Out of schedule for dep=Informatica, time=16:48:11
+2026-04-28 16:48:11 - Within schedule
+2026-04-28 16:48:11 - Login for Asfand
+2026-04-28 16:49:17 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 16:49:17 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 16:49:17 - Device found: mode=1, dep=Informatica
+2026-04-28 16:49:17 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 16:49:17 - Out of schedule for dep=Informatica, time=16:49:17
+2026-04-28 16:49:17 - Within schedule
+2026-04-28 16:49:17 - Logout for Dani
+2026-04-28 16:57:44 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 16:57:44 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 16:57:44 - Device found: mode=1, dep=Informatica
+2026-04-28 16:57:44 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 16:57:44 - Out of schedule for dep=Informatica, time=16:57:44
+2026-04-28 16:57:44 - Within schedule
+2026-04-28 16:57:44 - Login for Dani
+2026-04-28 16:57:47 - Request: /rfidattendance/getdata.php?card_uid=1122078848&device_token=05396ba7a2e574e3
+2026-04-28 16:57:47 - Processing card_uid: 1122078848, device_token: 05396ba7a2e574e3
+2026-04-28 16:57:47 - Device found: mode=1, dep=Informatica
+2026-04-28 16:57:47 - User found: Asfand, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 16:57:47 - Out of schedule for dep=Informatica, time=16:57:47
+2026-04-28 16:57:47 - Within schedule
+2026-04-28 16:57:47 - Login for Asfand
+2026-04-28 16:58:55 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 16:58:55 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 16:58:55 - Device found: mode=1, dep=Informatica
+2026-04-28 16:58:55 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 16:58:55 - Out of schedule for dep=Informatica, time=16:58:55
+2026-04-28 16:58:55 - Within schedule
+2026-04-28 16:58:55 - Login for Dani
+2026-04-28 16:59:07 - Request: /rfidattendance/getdata.php?card_uid=204156205&device_token=05396ba7a2e574e3
+2026-04-28 16:59:07 - Processing card_uid: 204156205, device_token: 05396ba7a2e574e3
+2026-04-28 16:59:07 - Device found: mode=1, dep=Informatica
+2026-04-28 16:59:07 - User found: Dani, add_card=1, device_uid=05396ba7a2e574e3
+2026-04-28 16:59:07 - Out of schedule for dep=Informatica, time=16:59:07
+2026-04-28 16:59:07 - Within schedule
+2026-04-28 16:59:07 - Login for Dani

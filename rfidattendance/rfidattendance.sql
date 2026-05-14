@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-04-2026 a las 14:19:42
+-- Tiempo de generación: 14-05-2026 a las 22:44:14
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -93,7 +93,7 @@ CREATE TABLE `devices` (
 --
 
 INSERT INTO `devices` (`id`, `device_name`, `device_dep`, `device_uid`, `device_date`, `device_mode`, `allowed_start`, `allowed_end`, `allowed_days`, `entry_start`, `entry_end`) VALUES
-(2, '2SMXD', 'Informatica', '05396ba7a2e574e3', '2026-04-02', 0, '14:55:00', '15:15:00', '1-5', '00:00:00', '23:59:59');
+(2, '2SMXD', 'Informatica', '05396ba7a2e574e3', '2026-04-02', 1, '14:55:00', '15:15:00', '1-5', '00:00:00', '23:59:59');
 
 -- --------------------------------------------------------
 
@@ -121,7 +121,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `serialnumber`, `gender`, `email`, `card_uid`, `card_select`, `user_date`, `device_uid`, `device_dep`, `add_card`) VALUES
 (10, 'Test User', 12345, 'Male', 'test@example.com', '123456789', 0, '2026-04-06', '05396ba7a2e574e3', 'Informatica', 1),
-(13, 'Asfand', 1, 'Male', 'asfandblanco@gmail.com', '1122078848', 1, '2026-04-06', '05396ba7a2e574e3', 'Informatica', 1);
+(13, 'Asfand', 1, 'Male', 'asfandblanco@gmail.com', '1122078848', 0, '2026-04-06', '05396ba7a2e574e3', 'Informatica', 1),
+(14, 'Dani', 9, 'Male', 'dani@gmail.com', '204156205', 1, '2026-04-28', '05396ba7a2e574e3', 'Informatica', 1);
 
 -- --------------------------------------------------------
 
@@ -213,13 +214,13 @@ ALTER TABLE `devices`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `users_logs`
 --
 ALTER TABLE `users_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
